@@ -82,5 +82,5 @@ export function registerScaleGesture() {
     },
   });
 
-  // document.querySelector('a-scene').setAttribute('scale-gesture', '');
+  document.querySelector('a-scene').setAttribute('scale-gesture', '');
 }
