@@ -1,5 +1,5 @@
 // Component that places trees at cursor location when screen is tapped
-const tapPlaceCursorComponent = {
+const tapPlaceCursorComponent = () => ({
   init() {
     const place = document.getElementById("btn3");
     const nextbutton = document.getElementById("nextbutton");
@@ -101,6 +101,6 @@ const tapPlaceCursorComponent = {
     this.el.object3D.position.lerp(this.cursorLocation, 0.4);
     this.el.object3D.rotation.y = this.threeCamera.rotation.y;
   },
-};
+});
 
 export { tapPlaceCursorComponent };
