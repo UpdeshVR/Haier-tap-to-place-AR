@@ -17,9 +17,6 @@
     import {tapPlaceCursorComponent} from './tap-place-cursor.js'
     // Register custom A-Frame components
     AFRAME.registerComponent('tap-place-cursor', tapPlaceCursorComponent())
-    registerRotateGesture();
-    registerScaleGesture();
-
   </script>
 </head>
 
@@ -39,7 +36,7 @@
     <a-assets>
       <a-asset-item id="car" src="./assets/models/fridge_bake_6.glb"></a-asset-item>
       <a-asset-item id="car-transparent" src="assets/models/wire_ghost.glb"></a-asset-item>
-      <img id="icon" src="./assets/rectangle-icon.png">
+      <img id="icon" src="./assets/images/rectangle-icon.png">
     </a-assets>
   
     <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
