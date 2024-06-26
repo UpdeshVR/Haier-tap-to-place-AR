@@ -67,5 +67,5 @@ export function registerRotateGesture() {
         }
     });
 
-    document.querySelector('a-scene').setAttribute('rotate-gesture', '');
+    // document.querySelector('a-scene').setAttribute('rotate-gesture', '');
 }
