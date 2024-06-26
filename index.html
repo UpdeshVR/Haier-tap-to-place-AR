@@ -21,11 +21,13 @@
     import { registerRotateGesture } from './helper/registerRotateGesture.js';
     import { registerScaleGesture } from './helper/registerScaleGesture.js';
     import {instructionsComponent} from './scripts/instructions.js'
+    import {tapPlaceCursorComponent} from './tap-place-cursor'
 
     // Register custom A-Frame components
     AFRAME.registerComponent('next-button', nextButtonComponent());
     AFRAME.registerComponent('instructions',instructionsComponent())
-    AFRAME.registerComponent('reflacrtion-component', responsiveImmersiveComponent);
+    AFRAME.registerComponent('tap-place-cursor', tapPlaceCursorComponent())
+    AFRAME.registerComponent('reflacrtion-component', responsiveImmersiveComponent());
     AFRAME.registerComponent('no-cull', {
       init() {
         this.el.addEventListener('model-loaded', () => {
@@ -216,6 +218,18 @@
     <a-entity light="type: point; intensity: 1; target: #model" position="0 30 0"></a-entity>
     <a-entity light="type: spot; angle: 45; target: #model" position="0 30 0"></a-entity>
     </a-entity>
+    <a-entity
+    id="cursor"
+    tap-place-cursor
+    gltf-model="#ref-transparent"
+    scale="4 4 4"
+    reflections="type: static">
+    <a-plane
+      rotation="-90 0 0"
+      scale="2 1 1"
+      material="src: #icon; opacity: 0.5; roughness: 0.8; metalness: 0;">
+    </a-plane>
+  </a-entity>
     <a-entity id="model" gltf-model="#ref-glb" scale="4 4 4" rotation="0 0 0" position="0 0 -20" visible="true"
       reflections="type: static" no-cull>
       <a-entity id="led-model" gltf-model="#led-glb"></a-entity>
