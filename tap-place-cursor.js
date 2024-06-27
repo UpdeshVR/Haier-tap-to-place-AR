@@ -27,7 +27,7 @@ const tapPlaceCursorComponent = () => ({
     btn3.addEventListener("click", (event) => {
       if (hasPlacedModel !== true) {
         hasPlacedModel = true;
-        hideElement(btn3, 0);
+        hideElement(arscreen, 0);
         this.model.setAttribute("position", this.el.object3D.position);
         this.model.setAttribute("visible", "true");
 
