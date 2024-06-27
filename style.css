@@ -11,7 +11,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -23,11 +23,11 @@
   left: 0;
   height: 100dvh;
   width: 100%;
+  pointer-events: none;
 }
 
 .start-screen {
   display: block;
-  pointer-events: auto;
   z-index: 1;
 }
 

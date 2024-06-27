@@ -5,15 +5,8 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="//cdn.8thwall.com/web/aframe/aframe-extras-7.2.0.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>   -->
-    <!-- <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script> -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script> -->
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <!-- <script src="./ar.js"></script> -->
-    <script>
-      THREEx.ArToolkitContext.baseURL =
-        "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
-    </script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
 
     <!-- Include your JS files -->
@@ -39,37 +32,43 @@
 
   <body style="margin: 0px; overflow: hidden">
     <!-- <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" next-button  reflacrtion-component no-cull > -->
-      <div class="container" style='margin: 0px; overflow: hidden;'>
-        <div class="start-screen">
-          <img class="bg" src="./assets/images/view-transparent-crystal-water.png" />
-          <div class="overlay"></div>
-          <div class="nav">
-            <img src="./assets/images/logo.png" />
-          </div>
-    
-          <div class="product-desc">
-            <p>Magic Convertible Inverter</p>
-            <p>Bottom Mount Refrigerator</p>
-          </div>
-    
-          <img id="view-btn" src="./assets/images/view_in_ar_button.png" />
-          <img id="fridge" src="./assets/images/fridge.png" alt="Fridge Image" />
-    
-          <div class="bottom-floor"></div>
+    <div class="container" style="margin: 0px; overflow: hidden">
+      <div class="start-screen">
+        <img
+          class="bg"
+          src="./assets/images/view-transparent-crystal-water.png"
+        />
+        <div class="overlay"></div>
+        <div class="nav">
+          <img src="./assets/images/logo.png" />
         </div>
-        <div class="ar-screen">
-          <img class="tap-to-place" id="btn3" src="assets/images/tap-to-place.png" />
+
+        <div class="product-desc">
+          <p>Magic Convertible Inverter</p>
+          <p>Bottom Mount Refrigerator</p>
         </div>
+
+        <img id="view-btn" src="./assets/images/view_in_ar_button.png" />
+        <img id="fridge" src="./assets/images/fridge.png" alt="Fridge Image" />
+
+        <div class="bottom-floor"></div>
+      </div>
+      <div class="ar-screen">
+        <img
+          class="tap-to-place"
+          id="btn3"
+          src="assets/images/tap-to-place.png"
+        />
+      </div>
+    </div>
     <a-scene
       id="scene"
-      artoolkit
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
       reflection="directionalLight:a-light#dirlight;"
       scale-gesture
       rotate-gesture
       reflacrtion-component
-      xrweb="allowedDevices: any"
     >
       <!-- <div id="top">
         <button id="btn">Recenter</button>
