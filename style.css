@@ -28,13 +28,14 @@
 .start-screen {
   display: block;
   pointer-events: auto;
-
+  z-index: 1;
 }
 
 .ar-screen {
   display: none;
   background-color: transparent;
-  pointer-events: auto;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .instructions-screen {

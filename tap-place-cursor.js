@@ -1,25 +1,33 @@
+import { hideElement, showElement } from "../helper/helperFunctions.js";
 // Component that places trees at cursor location when screen is tapped
 const tapPlaceCursorComponent = () => ({
   init() {
     this.raycaster = new THREE.Raycaster();
+    const scene = document.getElementById("scene");
     this.camera = document.getElementById("camera");
     this.threeCamera = this.camera.getObject3D("camera");
     this.ground = document.getElementById("ground");
     this.cursor = document.getElementById("cursor");
     this.model = document.getElementById("model");
+    const btn3 = document.getElementById("btn3");
 
     let hasPlacedModel = false;
 
+    const startscreen = document.querySelector(".start-screen");
+    const arscreen = document.querySelector(".ar-screen");
+    const viewbtn = document.getElementById("view-btn");
     // 2D coordinates of the raycast origin, in normalized device coordinates (NDC)---X and Y
     // components should be between -1 and 1.  Here we want the cursor in the center of the screen.
     this.rayOrigin = new THREE.Vector2(0, 0);
-
+    viewbtn.addEventListener("click", () => {
+      hideElement(startscreen, 0);
+      showElement(arscreen, "block");
+    });
     this.cursorLocation = new THREE.Vector3(0, 0, 0);
-
-    this.el.sceneEl.addEventListener("click", (event) => {
+    btn3.addEventListener("click", (event) => {
       if (hasPlacedModel !== true) {
         hasPlacedModel = true;
-
+        hideElement(btn3, 0);
         this.model.setAttribute("position", this.el.object3D.position);
         this.model.setAttribute("visible", "true");
 

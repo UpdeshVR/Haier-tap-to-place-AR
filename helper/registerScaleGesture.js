@@ -64,11 +64,22 @@ export function registerScaleGesture() {
 
     scaleModel: function (currentDistance) {
       const scaleFactor = currentDistance / this.startDistance;
-      this.model.scale.set(
+
+      // Calculate the new scale
+      const newScale = new THREE.Vector3(
         this.startScale.x * scaleFactor,
         this.startScale.y * scaleFactor,
         this.startScale.z * scaleFactor
       );
+
+      // Clamp the new scale to min and max values
+      const minScale = 1.0; // 100%
+      const maxScale = 4.0; // 400%
+
+      newScale.clampScalar(minScale, maxScale);
+
+      // Apply the clamped scale to the model
+      this.model.scale.set(newScale.x, newScale.y, newScale.z);
     },
 
     getDistance: function (touch1, touch2) {
