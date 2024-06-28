@@ -10,6 +10,7 @@ const tapPlaceCursorComponent = () => ({
     this.cursor = document.getElementById("cursor");
     this.model = document.getElementById("model");
     const btn3 = document.getElementById("btn3");
+    const btn4 = document.getElementById("btn4");
 
     let hasPlacedModel = false;
 
@@ -27,7 +28,7 @@ const tapPlaceCursorComponent = () => ({
     btn3.addEventListener("click", (event) => {
       if (hasPlacedModel !== true) {
         hasPlacedModel = true;
-        // hideElement(arscreen, 0);
+
         this.model.setAttribute("position", this.el.object3D.position);
         this.model.setAttribute("visible", "true");
 
@@ -36,7 +37,16 @@ const tapPlaceCursorComponent = () => ({
 
         // Add raycaster to camera
         this.camera.setAttribute("raycaster", "objects: .cantap");
+        hideElement(btn3, 0);
+        showElement(btn4, 0);
       }
+      btn4.addEventListener("click", () => {
+        this.model.setAttribute("animation-mixer", {
+          clip: "led",
+          loop: "once",
+          crossFadeDuration: 0.4,
+        });
+      });
     });
   },
   tick() {

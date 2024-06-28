@@ -165,7 +165,9 @@
   top: 20px;
   right: 20px;
 }
-
+#btn4{
+  width: 25vw;
+}
 .tap-to-place {
   position: absolute;
   bottom: 50px;
